@@ -33,9 +33,9 @@ jobs:
     #     docker exec myapp3-container bash -c " source /opt/ros/melodic/setup.bash && roscore"
 
 
-      - name: Run unit tests
-        run: |
-          python -m unittest ttt.py
+    - name: Run unit tests
+      run: |
+        python -m unittest ttt.py
 
     - name: Check Docker container logs
       run: |
