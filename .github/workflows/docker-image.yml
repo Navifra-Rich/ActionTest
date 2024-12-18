@@ -14,6 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Build the Docker image
       run: docker build . --file ./docker/Dockerfile -t myapp3
       
@@ -25,7 +26,7 @@ jobs:
     - name: Execute command inside the Docker container
       run: |
         # 컨테이너 내부에서 실행할 명령어
-        docker exec myapp3-container bash -c "echo 'Hello from Docker!' && ls /app"
+        docker exec myapp3-container bash -c "echo 'Hello from Docker!'"
 
     - name: Check Docker container logs
       run: |
