@@ -2,9 +2,9 @@ name: core build
 
 on:
     push:
-        branches: [main]
+        branches: [master]
     pull_request:
-        branches: [main]
+        branches: [master]
 
 env:
     TAG: ${{ github.ref_name }}
