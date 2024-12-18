@@ -14,7 +14,7 @@ def subtract(a, b):
 class TestMathOperations(unittest.TestCase):
 
     def setUp(self):
-        logging.info("=== START TEST: %s ===", self._testMethodName)
+        logging.info("\n=== START TEST: %s ===", self._testMethodName)
 
     def tearDown(self):
         logging.info("=== END TEST: %s ===\n\n", self._testMethodName)
