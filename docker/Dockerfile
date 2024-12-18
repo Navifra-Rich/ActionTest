@@ -1,8 +1,6 @@
 # Ubuntu:latest는 20.04를 의미합니다.
 FROM osrf/ros:melodic-desktop-full-bionic
 
-# 작성자 이름입니다
-MAINTAINER shlee853
 
 # apt로 패키지 받을 때 interative하게 사용하는 기능들을 끕니다. Docker에서 로그를 넘길 때 문제가 생길 수 있으므로 이 옵션은 필수입니다!
 ARG DEBIAN_FRONTEND=noninteractive
@@ -63,14 +61,15 @@ RUN rosdep fix-permissions
 #CMD ["/bin/bash", "init_tools.sh"]
 
 RUN cd /
+RUN /bin/bash -c "source /opt/ros/melodic/setup.bash && exec bash"
 
+CMD ["tail", "-f", "/dev/null"]
 # 3
 #RUN mkdir -p $HOME/catkin_ws/src && cd $HOME/catkin_ws/src 
 #RUN catkin_init_workspace
 
 # 소스코드 다운로드
 #RUN cd $HOME/catkin_ws && catkin_make
-#RUN source /opt/ros/$ROS_DISTRO/setup.bash
 #RUN source /$HOME/catkin_ws/devel/setup.bash
 
 #RUN echo "source /opt/ros/melodic/setup.bash" >> $HOME/.bashrc
