@@ -30,7 +30,7 @@ jobs:
 
     - name: Run roscore
       run: |
-        docker exec myapp3-container bash -c "roscore"
+        docker exec myapp3-container bash -c " source /opt/ros/melodic/setup.bash && roscore"
     - name: Check Docker container logs
       run: |
         docker logs myapp3-container  # 컨테이너 로그를 출력합니다.
