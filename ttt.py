@@ -17,7 +17,7 @@ class TestMathOperations(unittest.TestCase):
         logging.info("=== START TEST: %s ===", self._testMethodName)
 
     def tearDown(self):
-        logging.info("=== END TEST: %s ===", self._testMethodName)
+        logging.info("=== END TEST: %s ===\n\n", self._testMethodName)
 
     def test_add(self):
         result = add(2, 3)
@@ -29,7 +29,7 @@ class TestMathOperations(unittest.TestCase):
         logging.info(f"Result of subtract(5, 3): {result}")
         self.assertEqual(result, 1)  # 실패 의도
 
-        
+
     def test_subtract_success(self):
         result = subtract(5, 3)
         logging.info(f"Result of subtract(5, 3): {result}")
