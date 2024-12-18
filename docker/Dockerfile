@@ -63,7 +63,7 @@ WORKDIR $HOME
 RUN rosdep update 
 RUN rosdep fix-permissions 
 
-COPY init_tools.sh ./
+# COPY init_tools.sh ./
 #CMD ["/bin/bash", "init_tools.sh"]
 
 RUN cd /
