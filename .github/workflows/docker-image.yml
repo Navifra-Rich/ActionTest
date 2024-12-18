@@ -28,6 +28,9 @@ jobs:
         # 컨테이너 내부에서 실행할 명령어
         docker exec myapp3-container bash -c "echo 'Hello from Docker!'"
 
+    - name: Run roscore
+      run: |
+        docker exec myapp3-container bash -c "roscore"
     - name: Check Docker container logs
       run: |
         docker logs myapp3-container  # 컨테이너 로그를 출력합니다.
