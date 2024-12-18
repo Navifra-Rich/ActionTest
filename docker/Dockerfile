@@ -52,10 +52,6 @@ RUN apt-get install python3 python3-pip python-rosinstall python-rosdep python-r
 RUN mkdir -p /workspace && chmod -R +x /workspace
 #COPY /home/${HOST_USER}/workspace/init-melodic.sh /workspace/
 
-RUN useradd -rm -d ${HOME} -s /bin/bash -g root -G sudo,audio,video,plugdev -u ${UID} ${UNAME}
-RUN mkdir -p /etc/sudoers.d && \
-    echo "${UNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${UNAME} && \
-    chmod 0440 /etc/sudoers.d/${UNAME} 
 
 USER ${UNAME}
 WORKDIR $HOME
