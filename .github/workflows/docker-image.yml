@@ -35,7 +35,7 @@ jobs:
 
     - name: Run unit tests
       run: |
-        python -m unittest ttt.py
+        python -m unittest -v ttt.py
 
     - name: Check Docker container logs
       run: |
